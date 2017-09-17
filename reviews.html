@@ -22,7 +22,7 @@
           <p>Review Title:<br>
           <input type="text" name="reviewtitle" maxlength="50" required><br></p>
           <p>Hours (from/to):<br>
-          <input type="text" name="hours" required></p>
+          <input type="time" name="hours" required> to <input type="time" name="hours" required> </p>
           <p>Potty Spot:<br>
           <input type="text" name="location" required></p>
           <p>Handwashing Available?</p>
@@ -53,7 +53,8 @@
           <p>Overall Experience:<br>
           <input type="text" name="overall" required></p>
           <p>Additional Comments:<br>
-          <input type="text" name="comments" required></p>
+          <!-- <input id = "commentbox" type="text" name="comments" required></p> -->
+          <textarea rows="5" cols="30" maxlength="200"></textarea><br>
 
       <input type="submit" value="Submit">
     </fieldset>

@@ -56,6 +56,10 @@ h1 {
   text-align: center;
 }
 
+#mission {
+  justify-content: center;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -75,6 +79,7 @@ nav {
   margin-left: 500px;
   margin-right: 500px;
   }
+
 
 #disclaimer {
   text-align: center;
