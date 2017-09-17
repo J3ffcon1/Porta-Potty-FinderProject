@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Find Your Seat-Reviews</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
@@ -18,21 +17,29 @@
       </nav>
     </header>
     <form>
-      <!-- Review Title
-      PortaPotty Info
-      Hours (from/to) <--dropdown
-      Location (geotaggable)
-      Handwashing Available? Y/N
-
-      Rating (1,2,3)
+      <fieldset>
+        <legend>Please enter your review here:</legend>
+          Review Title:<br>
+          <input type="text" name="reviewtitle" maxlength="50"><br>
+          Hours (from/to):<br>
+          <input type="text" name="hours">
+          Potty Spot:
+          <input type="text" name="location">
+          Handwashing Available? (Y/N):
+          <input type="text" name="handwash">
+      </fieldset>
+      <fieldset>
+        <legend>Please rate your experience here:</legend>
+          Rating (on a scale of 1 to 3, 1 being lowest, 3 being highest):<br>
+          <input type=""
       Privacy
       Frequency of Service
       Cleanliness
       Overall
 
-      Comments (text box)
+      Comments (text box) -->
 
-      Submit button
+      <input type="submit" Submit button
        -->
     </form>
   </body>
