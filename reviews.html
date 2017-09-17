@@ -16,22 +16,23 @@
         </div>
       </nav>
     </header>
-    <form>
+    <form id = "reviewform" name ="form">
       <fieldset>
         <legend>Please enter your seat here:</legend>
           <p>Review Title:<br>
           <input type="text" name="reviewtitle" maxlength="50" required><br></p>
-          <p>Hours (from/to):<br>
+          <p>Hours:<br>
           <input type="time" name="hours" required> to <input type="time" name="hours" required> </p>
           <p>Potty Spot:<br>
           <input type="text" name="location" required></p>
           <p>Handwashing Available?</p>
           <p>
-          <input type="checkbox" name="hand1" value="yes">Yes<br>
-          <input type="checkbox" name="hand2" value="no">No</p>
+          <input type="radio" name="hand" value="yes">Yes<br>
+          <input type="radio" name="hand" value="no">No</p>
       </fieldset>
       <fieldset>
-        <legend>Please rate your experience here:</legend>
+        <legend>Please share your experience here:</legend>
+        <p>Overall Experience:<br></p>
           <span class="ratingScale">
             <input id="rating5" type="radio" name="rating" value="5">
             <label for="rating5">5</label>
@@ -45,13 +46,11 @@
             <label for="rating1">1</label>
           </span>
           <p>Privacy:<br>
-          <input type="text" name="privacy" required></p>
-          <p>Frequency of Service (how often is it cleaned):<br>
-          <input type="text" name="service" required></p>
-          <p>Cleanliness:<br>
-          <input type="text" name="clean" required></p>
-          <p>Overall Experience:<br>
-          <input type="text" name="overall" required></p>
+            <input type="radio" name="privacy" value="private">Private<br>
+            <input type="radio" name="privacy" value="public">Public</p>
+          <p>Is it Clean?<br>
+            <input type="radio" name="clean" value="yes">Yes<br>
+            <input type="radio" name="clean" value="no">No</p>
           <p>Additional Comments:<br>
           <!-- <input id = "commentbox" type="text" name="comments" required></p> -->
           <textarea rows="5" cols="30" maxlength="200"></textarea><br>
