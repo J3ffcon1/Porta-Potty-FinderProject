@@ -1,0 +1,21 @@
+body {
+  background-color: rgba(157, 199, 200, 1);
+  font-family: "Poppins";
+}
+
+img {
+  display: block;
+  border-color: rgba(116, 131, 134, 1);
+  border-style: solid;
+  border-radius: 50%;
+  margin: auto;
+  width: 20%;
+}
+
+h1 {
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+}
