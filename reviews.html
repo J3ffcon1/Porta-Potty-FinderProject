@@ -18,29 +18,45 @@
     </header>
     <form>
       <fieldset>
-        <legend>Please enter your review here:</legend>
-          Review Title:<br>
-          <input type="text" name="reviewtitle" maxlength="50" required><br>
-          Hours (from/to):<br>
-          <input type="text" name="hours">
-          Potty Spot:
-          <input type="text" name="location">
-          Handwashing Available? (Y/N):
-          <input type="text" name="handwash">
+        <legend>Please enter your seat here:</legend>
+          <p>Review Title:<br>
+          <input type="text" name="reviewtitle" maxlength="50" required><br></p>
+          <p>Hours (from/to):<br>
+          <input type="text" name="hours" required></p>
+          <p>Potty Spot:<br>
+          <input type="text" name="location" required></p>
+          <p>Handwashing Available?</p>
+          <p>
+          <input type="checkbox" name="hand1" value="yes">Yes<br>
+          <input type="checkbox" name="hand2" value="no">No</p>
       </fieldset>
       <fieldset>
         <legend>Please rate your experience here:</legend>
-          Rating (on a scale of 1 to 3, 1 being lowest, 3 being highest):<br>
-          <input type=""
-      Privacy
-      Frequency of Service
-      Cleanliness
-      Overall
+          <span class="ratingScale">
+            <input id="rating5" type="radio" name="rating" value="5">
+            <label for="rating5">5</label>
+            <input id="rating4" type="radio" name="rating" value="4">
+            <label for="rating4">4</label>
+            <input id="rating3" type="radio" name="rating" value="3">
+            <label for="rating3">3</label>
+            <input id="rating2" type="radio" name="rating" value="2">
+            <label for="rating2">2</label>
+            <input id="rating1" type="radio" name="rating" value="1">
+            <label for="rating1">1</label>
+          </span>
+          <p>Privacy:<br>
+          <input type="text" name="privacy" required></p>
+          <p>Frequency of Service (how often is it cleaned):<br>
+          <input type="text" name="service" required></p>
+          <p>Cleanliness:<br>
+          <input type="text" name="clean" required></p>
+          <p>Overall Experience:<br>
+          <input type="text" name="overall" required></p>
+          <p>Additional Comments:<br>
+          <input type="text" name="comments" required></p>
 
-      Comments (text box) -->
-
-      <input type="submit" Submit button
-       -->
+      <input type="submit" value="Submit">
+    </fieldset>
     </form>
   </body>
   <footer>
