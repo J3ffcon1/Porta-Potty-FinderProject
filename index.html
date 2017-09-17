@@ -3,14 +3,23 @@
     <head>
       <title>Find Your Seat</title>
       <meta name="viewport" content="initial-scale=1.0">
-      <meta charset="utf-8">
-      <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+      <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-      <h1>Find Your Seat</h1>
-      <nav>
-        Nav PlaceHolder
-      </nav>
+      <header>
+        <img id="tardis" src="images/pp_icon.jpg" alt="Porta Potty">
+        <h1>Find Your Seat</h1>
+        <nav>
+          <div id = "index-nav">
+            <a href = "index.html">Home</a>
+            <a href = "reviews.html">Reviews</a>
+            <a href = "about.html">About</a>
+          </div>
+        </nav>
+      </header>
+      <br>
+      <br>
       <div id="map_holder" style="height:400px">
       </div>
       <input type="button" value="Add" onclick="addToList()">
@@ -26,5 +35,10 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxM8Bh8A5SsoWYt1SL_LUpC3GMrCgzPzo&callback=initMap">
     </script>
     </body>
-  <footer>Disclaimer!</footer>
+  <footer>
+    <div id="disclaimer">
+      <h3>Disclaimer</h3>
+      <p>Due to the transient nature of porta-potty locations and use restrictions, our legal team has advised us to advise you that use of our web application is at your own risk and we are not responsible for anything that happens.  USE AT OWN RISK!</p>
+    </div>
+  </footer>
 </html>

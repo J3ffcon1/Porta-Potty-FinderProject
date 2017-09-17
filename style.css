@@ -3,7 +3,7 @@ body {
   font-family: "Poppins";
 }
 
-img {
+#tardis {
   display: block;
   border-color: rgba(116, 131, 134, 1);
   border-style: solid;
@@ -16,6 +16,32 @@ h1 {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: rgba(112, 101, 99, 1);
+
+}
+
 nav {
+  text-decoration: none;
   text-align: center;
+  word-spacing: 30px;
+  border-bottom: 2px solid rgb(0,0,0);
+  padding-bottom: 5px;
+  margin-left: 500px;
+  margin-right: 500px;
+  }
+
+#disclaimer {
+  text-align: center;
+  background-color: rgba(112, 101, 99, 1);
+  border-style: solid;
+  border-radius: 25px;
+  border-color: rgba(59, 13, 17, 1);
+  padding: 5px;
+  margin: 5px;
 }
