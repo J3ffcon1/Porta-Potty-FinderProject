@@ -55,3 +55,5 @@ function sortDistance(left, right) {
 function sortPottyList() {
   sortedPotties = pottySpots.sort(sortDistance);
 }
+
+window.addEventListener("load", showMarkers)
