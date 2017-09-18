@@ -2,6 +2,7 @@ var Features = function (title, hours, position, handWash, privacy, service, cle
   this.title = title;
   this.hours = hours;
   this.position = position;
+  this.distance = 0;
   this.type = "potty";
   this.wash = handWash;
   this.privacy = privacy;
@@ -25,4 +26,32 @@ function showMarkers() {
       map: map
     });
   }
+}
+
+function proximity(lat1, lng1, lat2, lng2, unit){
+  var radlat1 = Math.PI * lat1/180
+  var radlat2 = Math.PI * lat2/180
+  var theta = lng1 - lng2
+  var radtheta = Math.PI * theta/180
+  var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta)
+  dist = Math.acos(dist)
+  dist = dist * 180/Math.PI
+  dist = dist * 60 * 1.1515
+  return dist
+}
+
+function calculateDistance() {
+  for (var i=0; i < pottySpots.length; i++){
+    var distance = proximity(pos.lat, pos.lng, pottySpots[i].position.lat, pottySpots[i].position.lng);
+    pottySpots[i].distance = distance;
+  }
+}
+
+function sortDistance(left, right) {
+  if (left.distance < right.distance) {return -1}
+  else if (left.distance > right.distance) {return 1}
+  else {return 0}
+}
+function sortPottyList() {
+  sortedPotties = pottySpots.sort(sortDistance);
 }

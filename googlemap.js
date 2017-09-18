@@ -1,4 +1,4 @@
-var map, infoWindow;
+var map, infoWindow, pos,sortedPotties;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map_holder'), {
     center: {lat: 45.523 , lng: -122.681 },
@@ -23,7 +23,7 @@ function initMap() {
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
+      pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
