@@ -90,3 +90,11 @@ nav {
   padding: 5px;
   margin: 5px;
 }
+
+.pottyList {
+  list-style: none;
+}
+
+.pottyList:hover {
+  color: rgba(112, 101, 99, 1);
+}
