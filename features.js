@@ -11,6 +11,39 @@ var Features = function (title, hours, position, handWash, privacy, service, cle
   this.overall = rollRating;
   this.comment = comment;
 }
+// adding variables to use with google maps.
+var map;
+var marker;
+var infowindow;
+var messagewindow;
+
+function addMapEventListeners() {
+  console.log("adding eventlistener to map");
+
+  google.maps.event.addListener(map, "click", function(event) {
+    console.log("attempting to add marker after click");
+    marker = new google.maps.Marker({
+      position: event.latLng,
+      map: map
+    });
+  });
+
+}
+
+function saveData() {
+  var name = document.getElementById('name').value;
+  var address = document.getElementById('address').value;
+  var type = document.getElementById('type').value;
+  var latlng = marker.getPosition();
+
+  downloadUrl(url, function(data, responseCode) {
+
+    if (responseCode == 200 && data.length <= 1) {
+      infowindow.close();
+      messagewindow.open(map, marker);
+    }
+  });
+}
 
 var pottySpots = [];
 pottySpots.push (new Features ('Riverfront Potty', 'Always Open', {lat: 45.52549, lng: -122.670283} , 'yes', '2', '1', '3', '2', '' ));
@@ -80,3 +113,4 @@ function generateList() {
   displayList();
 }
 window.addEventListener("load", showMarkers)
+window.addEventListener("load", addMapEventListeners)
