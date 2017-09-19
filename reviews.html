@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find Your Seat-Reviews</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <img id="tardis" src="images/pp_icon.jpg" alt="Porta Potty">
+      <h1>Find Your Seat</h1>
+      <nav>
+        <div id = "index-nav">
+          <a href = "index.html">Home</a>
+          <a href = "reviews.html">Reviews</a>
+          <a href = "about.html">About</a>
+        </div>
+      </nav>
+    </header>
+    <form id = "reviewform" name ="form">
+      <fieldset>
+        <legend>Please enter your seat here:</legend>
+          <p>Review Title:<br>
+          <input type="text" name="reviewtitle" maxlength="50" required><br></p>
+          <p>Hours:<br>
+          <input type="time" name="hours" required> to <input type="time" name="hours" required> </p>
+          <p>Potty Spot:<br>
+          <input type="text" name="location" required></p>
+          <p>Handwashing Available?</p>
+          <p>
+          <input type="radio" name="hand" value="yes">Yes<br>
+          <input type="radio" name="hand" value="no">No</p>
+      </fieldset>
+      <fieldset>
+        <legend>Please share your experience here:</legend>
+        <p>Overall Experience:<br></p>
+          <span class="ratingScale">
+            <input id="rating5" type="radio" name="rating" value="5">
+            <label for="rating5">5</label>
+            <input id="rating4" type="radio" name="rating" value="4">
+            <label for="rating4">4</label>
+            <input id="rating3" type="radio" name="rating" value="3">
+            <label for="rating3">3</label>
+            <input id="rating2" type="radio" name="rating" value="2">
+            <label for="rating2">2</label>
+            <input id="rating1" type="radio" name="rating" value="1">
+            <label for="rating1">1</label>
+          </span>
+          <p>Privacy:<br>
+            <input type="radio" name="privacy" value="private">Private<br>
+            <input type="radio" name="privacy" value="public">Public</p>
+          <p>Is it Clean?<br>
+            <input type="radio" name="clean" value="yes">Yes<br>
+            <input type="radio" name="clean" value="no">No</p>
+          <p>Additional Comments:<br>
+          <!-- <input id = "commentbox" type="text" name="comments" required></p> -->
+          <textarea rows="5" cols="30" maxlength="200"></textarea><br>
+
+      <input type="submit" value="Submit">
+    </fieldset>
+    </form>
+  </body>
+  <footer>
+    <div id="disclaimer">
+      <h3>Disclaimer</h3>
+      <p>Due to the transient nature of porta-potty locations and use restrictions, our legal team has advised us to advise you that use of our web application is at your own risk and we are not responsible for anything that happens.  USE AT OWN RISK!</p>
+    </div>
+  </footer>
+</html>

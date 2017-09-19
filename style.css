@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body {
+  background-color: rgba(157, 199, 200, 1);
+  font-family: "Poppins";
+}
+
+#tardis {
+  display: block;
+  border-color: rgba(116, 131, 134, 1);
+  border-style: solid;
+  border-radius: 50%;
+  margin: auto;
+  width: 20%;
+}
+
+.ratingScale:not(old){
+  display        : inline-block;
+  width          : 7.5em;
+  height         : 1.5em;
+  overflow       : hidden;
+  vertical-align : bottom;
+}
+
+.ratingScale:not(old) > input{
+  margin-right : -100%;
+  opacity      : 0;
+}
+
+.ratingScale:not(old) > label{
+  display         : block;
+  float           : right;
+  position        : relative;
+  background      : url('images/Household-Toilet-on-icon.png');
+  background-size : contain;
+}
+
+.ratingScale:not(old) > label:before{
+  content         : '';
+  display         : block;
+  width           : 1.5em;
+  height          : 1.5em;
+  background      : url('images/Household-Toilet-Pan.ico');
+  background-size : contain;
+  opacity         : 0;
+  transition      : opacity 0.2s linear;
+}
+
+.ratingScale:not(old) > label:hover:before,
+.ratingScale:not(old) > label:hover ~ label:before,
+.ratingScale:not(:hover) > :checked ~ label:before{
+  opacity : 1;
+}
+
+h1 {
+  text-align: center;
+}
+
+#mission {
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: rgba(112, 101, 99, 1);
+
+}
+
+nav {
+  text-decoration: none;
+  text-align: center;
+  word-spacing: 30px;
+  border-bottom: 2px solid rgb(0,0,0);
+  padding-bottom: 5px;
+  margin-left: 500px;
+  margin-right: 500px;
+  }
+
+
+#disclaimer {
+  text-align: center;
+  background-color: rgba(112, 101, 99, 1);
+  border-style: solid;
+  border-radius: 25px;
+  border-color: rgba(59, 13, 17, 1);
+  padding: 5px;
+  margin: 5px;
+}
