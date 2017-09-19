@@ -52,8 +52,31 @@ function sortDistance(left, right) {
   else if (left.distance > right.distance) {return 1}
   else {return 0}
 }
+
 function sortPottyList() {
   sortedPotties = pottySpots.sort(sortDistance);
 }
 
+function displayList() {
+  var ulElement = document.createElement("ul");
+  var spanTitle = document.createElement("span");
+  spanTitle.innerText = "Top 5 Seats Near You";
+  spanTitle.setAttribute("id", "spanTitle");
+  ulElement.appendChild(spanTitle);
+  document.getElementById("displayList").appendChild(ulElement);
+  var sortedList = pottySpots.sort(sortDistance);
+  for (var i=0; i < sortedList.length; i++) {
+    var liElement = document.createElement("li");
+    var currentPotty = sortedList[i];
+    liElement.innerText = currentPotty.title + " | Roll Rating: " + currentPotty.overall;
+    liElement.setAttribute("class", "pottyList");
+    ulElement.appendChild(liElement);
+  }
+}
+
+function generateList() {
+  calculateDistance();
+  sortPottyList();
+  displayList();
+}
 window.addEventListener("load", showMarkers)

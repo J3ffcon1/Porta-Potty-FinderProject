@@ -1,4 +1,4 @@
-var map, infoWindow, pos,sortedPotties;
+var map, infoWindow, pos, sortedPotties;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map_holder'), {
     center: {lat: 45.523 , lng: -122.681 },
@@ -36,6 +36,7 @@ function initMap() {
         position: pos,
         map:map
       });
+      generateList();
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
