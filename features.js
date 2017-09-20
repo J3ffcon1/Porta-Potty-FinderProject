@@ -31,9 +31,6 @@ function addMapEventListeners() {
 }
 
 function saveData() {
-  var name = document.getElementById('name').value;
-  var address = document.getElementById('address').value;
-  var type = document.getElementById('type').value;
   var latlng = marker.getPosition();
 
   downloadUrl(url, function(data, responseCode) {
