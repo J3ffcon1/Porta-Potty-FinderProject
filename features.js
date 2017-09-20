@@ -107,6 +107,20 @@ function displayList() {
     liElement.addEventListener("click", displayTable);
   }
 }
+function buildTable(clicked) {
+  var createTable = document.createElement("table");
+  var tableBody = document.createElement("tbody");
+  var row = document.createElement("tr");
+  var titleElement = document.createElement("td");
+  var overallElement = document.createElement("td");
+  overallElement.innerText = "Overall rating" + " " + clicked.overall;
+  titleElement.innerText = clicked.title;
+  row.appendChild(titleElement);
+  row.appendChild(overallElement);
+  tableBody.appendChild(row);
+  createTable.appendChild(tableBody);
+  document.getElementById("displayTable").appendChild(createTable);
+}
 
 function displayTable(event) {
   document.getElementById("displayTable").innerHTML = "";
@@ -116,7 +130,7 @@ function displayTable(event) {
     var clicked = sortedPotties[index];
     if (listClickedTitle == clicked.title){
       console.log("Title Clicked" + clicked.title);
-
+      buildTable(clicked);
     } else {
       index++
     }
