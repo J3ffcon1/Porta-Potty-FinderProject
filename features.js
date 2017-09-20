@@ -25,7 +25,11 @@ function addMapEventListeners() {
     marker = new google.maps.Marker({
       position: event.latLng,
       map: map
+
     });
+    google.maps.event.addListener(marker, 'click', function(event) {
+            window.location = "reviews.html";
+          });
   });
 
 }
