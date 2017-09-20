@@ -27,10 +27,26 @@ function addMapEventListeners() {
       map: map
 
     });
+
+    localStorage.setItem('Coordinates', JSON.stringify(event.latLng));
+
     google.maps.event.addListener(marker, 'click', function(event) {
-            window.location = "reviews.html";
-          });
+      window.location = "reviews.html";
+    });
+
   });
+
+
+  // function updateMarkerStatus(str) {
+  //   document.getElementById('marker').innerHTML = str;
+  // }
+  //
+  // function updateMarkerPosition(latLng) {
+  //   document.getElementById('position').innerHTML = [
+  //     latLng.lat(),
+  //     latLng.lng()
+  //   ].join(', ');
+  // }
 
 }
 
