@@ -62,11 +62,11 @@ function saveData() {
 }
 
 var pottySpots = [];
-pottySpots.push (new Features ('Riverfront Potty', 'Always Open', {lat: 45.52549, lng: -122.670283} , 'yes', 'private', 'yes', '2', '' ));
-pottySpots.push (new Features ('Super Stinky Potty', 'Always Open', {lat: 45.52441, lng: -122.677257} , 'no', 'public', 'no', '2', '' ));
-pottySpots.push (new Features ('Park Ave Potty', '9am to Dusk', {lat: 45.52448, lng: -122.67914} , 'yes', 'public', 'no', '4', ''));
-pottySpots.push (new Features ('Freeway Potty', '11am to 7pm', {lat: 45.523540534, lng: -122.68671992} , 'no', 'private', 'yes', '4', ''));
-pottySpots.push (new Features ('Sizzle Potty', 'Dusk to Dawn', {lat: 45.522292, lng: -122.682042} , 'yes', 'public', 'no', '3', ''));
+pottySpots.push (new Features ('Riverfront Potty', 'Always Open', {lat: 45.52549, lng: -122.670283} , 'Yes', 'private', 'Yes', '2', '' ));
+pottySpots.push (new Features ('Super Stinky Potty', 'Always Open', {lat: 45.52441, lng: -122.677257} , 'No', 'public', 'No', '2', '' ));
+pottySpots.push (new Features ('Park Ave Potty', '9am to Dusk', {lat: 45.52448, lng: -122.67914} , 'Yes', 'public', 'No', '4', ''));
+pottySpots.push (new Features ('Freeway Potty', '11am to 7pm', {lat: 45.523540534, lng: -122.68671992} , 'No', 'private', 'Yes', '4', ''));
+pottySpots.push (new Features ('Sizzle Potty', 'Dusk to Dawn', {lat: 45.522292, lng: -122.682042} , 'Yes', 'public', 'No', '3', ''));
 
 function showMarkers() {
   for (var i=0; i < pottySpots.length; i++) {
@@ -127,15 +127,33 @@ function displayList() {
 function buildTable(clicked) {
   var createTable = document.createElement("table");
   var tableBody = document.createElement("tbody");
+  tableBody.setAttribute("id", "tBody");
   var row = document.createElement("tr");
   var titleElement = document.createElement("td");
   var overallElement = document.createElement("td");
-  overallElement.innerText = "Overall rating" + " " + clicked.overall;
+  overallElement.innerText = "Overall rating: " + clicked.overall + " out of 5.";
   titleElement.innerText = clicked.title;
+  titleElement.setAttribute("id", "tableTitle");
   row.appendChild(titleElement);
   row.appendChild(overallElement);
   tableBody.appendChild(row);
   createTable.appendChild(tableBody);
+  var row2 = document.createElement("tr");
+  var hoursElement = document.createElement("td");
+  var washElement = document.createElement("td");
+  hoursElement.innerText = "Hours: " + clicked.hours;
+  washElement.innerText = "Handwash available: " + clicked.wash;
+  row2.appendChild(hoursElement);
+  row2.appendChild(washElement);
+  tableBody.appendChild(row2);
+  var row3 = document.createElement("tr");
+  var cleanElement = document.createElement("td");
+  var privacyElement = document.createElement("td");
+  cleanElement.innerText = "Is it clean? " + clicked.clean;
+  privacyElement.innerText = "Private or Public? " + clicked.privacy;
+  row3.appendChild(cleanElement);
+  row3.appendChild(privacyElement);
+  tableBody.appendChild(row3);
   document.getElementById("displayTable").appendChild(createTable);
 }
 
