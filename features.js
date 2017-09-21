@@ -1,4 +1,4 @@
-var Features = function (title, hours, position, handWash, privacy, service, clean, rollRating, comment) {
+var Features = function (title, hours, position, handWash, privacy, clean, rollRating, comment) {
   this.title = title;
   this.hours = hours;
   this.position = position;
@@ -6,7 +6,6 @@ var Features = function (title, hours, position, handWash, privacy, service, cle
   this.type = "potty";
   this.wash = handWash;
   this.privacy = privacy;
-  this.service = service;
   this.clean = clean;
   this.overall = rollRating;
   this.comment = comment;
@@ -46,11 +45,11 @@ function saveData() {
 }
 
 var pottySpots = [];
-pottySpots.push (new Features ('Riverfront Potty', 'Always Open', {lat: 45.52549, lng: -122.670283} , 'yes', '2', '1', '3', '2', '' ));
-pottySpots.push (new Features ('Super Stinky Potty', 'Always Open', {lat: 45.52441, lng: -122.677257} , 'no', '1', '1', '1', '2', '' ));
-pottySpots.push (new Features ('Park Ave Potty', '9am to Dusk', {lat: 45.52448, lng: -122.67914} , 'yes', '4', '2', '3', '2', '' ));
-pottySpots.push (new Features ('Freeway Potty', '11am to 7pm', {lat: 45.523540534, lng: -122.68671992} , 'no', '5', '3', '2', '4', '' ));
-pottySpots.push (new Features ('Sizzle Potty', 'Dusk to Dawn', {lat: 45.522292, lng: -122.682042} , 'yes', '3', '5', '2', '1', '' ));
+pottySpots.push (new Features ('Riverfront Potty', 'Always Open', {lat: 45.52549, lng: -122.670283} , 'yes', 'private', 'yes', '2', '' ));
+pottySpots.push (new Features ('Super Stinky Potty', 'Always Open', {lat: 45.52441, lng: -122.677257} , 'no', 'public', 'no', '2', '' ));
+pottySpots.push (new Features ('Park Ave Potty', '9am to Dusk', {lat: 45.52448, lng: -122.67914} , 'yes', 'public', 'no', '4', ''));
+pottySpots.push (new Features ('Freeway Potty', '11am to 7pm', {lat: 45.523540534, lng: -122.68671992} , 'no', 'private', 'yes', '4', ''));
+pottySpots.push (new Features ('Sizzle Potty', 'Dusk to Dawn', {lat: 45.522292, lng: -122.682042} , 'yes', 'public', 'no', '3', ''));
 
 function showMarkers() {
   for (var i=0; i < pottySpots.length; i++) {
@@ -102,15 +101,46 @@ function displayList() {
     var liElement = document.createElement("li");
     var currentPotty = sortedList[i];
     liElement.innerText = currentPotty.title + " | Roll Rating: " + currentPotty.overall;
+    liElement.dataset.title = currentPotty.title;
     liElement.setAttribute("class", "pottyList");
     ulElement.appendChild(liElement);
+    liElement.addEventListener("click", displayTable);
   }
 }
-
-function generateList() {
-  calculateDistance();
-  sortPottyList();
-  displayList();
+function buildTable(clicked) {
+  var createTable = document.createElement("table");
+  var tableBody = document.createElement("tbody");
+  var row = document.createElement("tr");
+  var titleElement = document.createElement("td");
+  var overallElement = document.createElement("td");
+  overallElement.innerText = "Overall rating" + " " + clicked.overall;
+  titleElement.innerText = clicked.title;
+  row.appendChild(titleElement);
+  row.appendChild(overallElement);
+  tableBody.appendChild(row);
+  createTable.appendChild(tableBody);
+  document.getElementById("displayTable").appendChild(createTable);
 }
-window.addEventListener("load", showMarkers)
-window.addEventListener("load", addMapEventListeners)
+
+function displayTable(event) {
+  document.getElementById("displayTable").innerHTML = "";
+  var listClickedTitle = event.target.dataset.title;
+  var index = 0;
+  do {
+    var clicked = sortedPotties[index];
+    if (listClickedTitle == clicked.title){
+      console.log("Title Clicked" + clicked.title);
+      buildTable(clicked);
+    } else {
+      index++
+    }
+  }
+  while (listClickedTitle !== clicked.title);
+}
+  function generateList() {
+    calculateDistance();
+    sortPottyList();
+    displayList();
+  }
+  window.addEventListener("load", showMarkers)
+  window.addEventListener("load", addMapEventListeners)

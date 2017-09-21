@@ -98,3 +98,7 @@ nav {
 .pottyList:hover {
   color: rgba(112, 101, 99, 1);
 }
+
+#forDisplay {
+  display:flex;
+}
