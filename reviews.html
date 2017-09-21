@@ -20,32 +20,32 @@
       <fieldset>
         <legend>Please enter your seat here:</legend>
           <p>Review Title:<br>
-          <input type="text" name="reviewtitle" maxlength="50" required><br></p>
+          <input id ="title" type="text" name="reviewtitle" maxlength="50" required><br></p>
           <p>Latitude:<br>
           <input id = "position1" type ="text" name="lat" maxlength = "50" readonly><br></p>
           <p>Longitude:<br>
           <input id = "position2" type ="text" name="long" maxlength = "50" readonly><br></p>
 
           <p>Hours:<br>
-          <input type="text" name="hours" maxlength="50" required></p>
+          <input id = "hours" type="text" name="hours" maxlength="50" required></p>
           <p>Handwashing Available?</p>
           <p>
-          <input type="radio" name="hand" value="yes">Yes<br>
+          <input id = "wash" type="radio" name="hand" value="yes">Yes<br>
           <input type="radio" name="hand" value="no">No</p>
       </fieldset>
       <fieldset>
         <legend>Please share your experience here:</legend>
         <p>Overall Experience:<br></p>
           <span class="ratingScale">
-            <input id="rating5" type="radio" name="rating" value="5">
+            <input id="rating5" type="radio" name="rollRating" value="5">
             <label for="rating5">5</label>
-            <input id="rating4" type="radio" name="rating" value="4">
+            <input id="rating4" type="radio" name="rollRating" value="4">
             <label for="rating4">4</label>
-            <input id="rating3" type="radio" name="rating" value="3">
+            <input id="rating3" type="radio" name="rollRating" value="3">
             <label for="rating3">3</label>
-            <input id="rating2" type="radio" name="rating" value="2">
+            <input id="rating2" type="radio" name="rollRating" value="2">
             <label for="rating2">2</label>
-            <input id="rating1" type="radio" name="rating" value="1">
+            <input id="rating1" type="radio" name="rollRating" value="1">
             <label for="rating1">1</label>
           </span>
           <p>Privacy:<br>
@@ -56,12 +56,13 @@
             <input type="radio" name="clean" value="no">No</p>
           <p>Additional Comments:<br>
           <!-- <input id = "commentbox" type="text" name="comments" required></p> -->
-          <textarea rows="5" cols="30" maxlength="200"></textarea><br>
+          <textarea rows="5" name= "comment" cols="30" maxlength="200"></textarea><br>
 
       <input type="submit" value="Submit">
     </fieldset>
     </form>
     <script type="text/javascript" src="localStorage.js"></script>
+
 
   </body>
   <footer>
