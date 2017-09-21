@@ -64,6 +64,9 @@ a {
   text-decoration: none;
   color: black;
 }
+#mapinfo {
+  text-align: center;
+}
 
 a:hover {
   color: rgba(112, 101, 99, 1);

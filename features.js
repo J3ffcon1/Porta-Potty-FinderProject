@@ -24,15 +24,32 @@ function addMapEventListeners() {
     marker = new google.maps.Marker({
       position: event.latLng,
       map: map
+
     });
+
+    localStorage.setItem('Coordinates', JSON.stringify(event.latLng));
+
+    google.maps.event.addListener(marker, 'click', function(event) {
+      window.location = "reviews.html";
+    });
+
   });
+
+
+  // function updateMarkerStatus(str) {
+  //   document.getElementById('marker').innerHTML = str;
+  // }
+  //
+  // function updateMarkerPosition(latLng) {
+  //   document.getElementById('position').innerHTML = [
+  //     latLng.lat(),
+  //     latLng.lng()
+  //   ].join(', ');
+  // }
 
 }
 
 function saveData() {
-  var name = document.getElementById('name').value;
-  var address = document.getElementById('address').value;
-  var type = document.getElementById('type').value;
   var latlng = marker.getPosition();
 
   downloadUrl(url, function(data, responseCode) {
