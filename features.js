@@ -28,6 +28,7 @@ function addMapEventListeners() {
     });
 
     localStorage.setItem('Coordinates', JSON.stringify(event.latLng));
+    localStorage.setItem('pottySpots', JSON.stringify(pottySpots));
 
     google.maps.event.addListener(marker, 'click', function(event) {
       window.location = "reviews.html";
@@ -67,6 +68,11 @@ pottySpots.push (new Features ('Super Stinky Potty', 'Always Open', {lat: 45.524
 pottySpots.push (new Features ('Park Ave Potty', '9am to Dusk', {lat: 45.52448, lng: -122.67914} , 'Yes', 'public', 'No', '4', ''));
 pottySpots.push (new Features ('Freeway Potty', '11am to 7pm', {lat: 45.523540534, lng: -122.68671992} , 'No', 'private', 'Yes', '4', ''));
 pottySpots.push (new Features ('Sizzle Potty', 'Dusk to Dawn', {lat: 45.522292, lng: -122.682042} , 'Yes', 'public', 'No', '3', ''));
+
+var portapotties = localStorage.getItem('pottySpots');
+if (portapotties) {
+  pottySpots = JSON.parse(portapotties);
+  }
 
 function showMarkers() {
   for (var i=0; i < pottySpots.length; i++) {

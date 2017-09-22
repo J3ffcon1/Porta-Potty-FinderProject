@@ -37,15 +37,19 @@ function handleSubmit(event) {
 
 console.log(newFeature);
 
-var portapotties = localStorage.getItem('portapotties');
+var portapotties = localStorage.getItem('pottySpots');
 var portapottiesarray = [];
 if (portapotties) {
   portapottiesarray = JSON.parse(portapotties);
-}
+  }
 portapottiesarray.push(newFeature);
 portapottiesarray = JSON.stringify(portapottiesarray);
-localStorage.setItem('portapotties', portapottiesarray);
+localStorage.setItem('pottySpots', portapottiesarray);
+location.href = "index.html";
+
 }
+
+
 document.getElementById('reviewform').addEventListener('submit', handleSubmit);
 
 window.addEventListener("load", getCoordinates);
