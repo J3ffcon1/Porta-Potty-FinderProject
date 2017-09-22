@@ -15,6 +15,7 @@ var map;
 var marker;
 var infowindow;
 var messagewindow;
+var image;
 
 function addMapEventListeners() {
   console.log("adding eventlistener to map");
@@ -23,8 +24,8 @@ function addMapEventListeners() {
     console.log("attempting to add marker after click");
     marker = new google.maps.Marker({
       position: event.latLng,
+      icon: image,
       map: map
-
     });
 
     localStorage.setItem('Coordinates', JSON.stringify(event.latLng));
@@ -72,7 +73,8 @@ function showMarkers() {
   for (var i=0; i < pottySpots.length; i++) {
     var marker = new google.maps.Marker({
       position: pottySpots[i].position,
-      map: map
+      map: map,
+      icon: image
     });
   }
 }
@@ -109,7 +111,7 @@ function sortPottyList() {
 function displayList() {
   var ulElement = document.createElement("ul");
   var spanTitle = document.createElement("span");
-  spanTitle.innerText = "Top 5 Seats Near You";
+  spanTitle.innerText = "Top Seats Near You";
   spanTitle.setAttribute("id", "spanTitle");
   ulElement.appendChild(spanTitle);
   document.getElementById("displayList").appendChild(ulElement);
@@ -177,5 +179,16 @@ function displayTable(event) {
     sortPottyList();
     displayList();
   }
+
+  function makeIcon() {
+    image = {
+      url: "images/Household-Toilet-on-icon.png",
+      scaledSize: new google.maps.Size(50,50),
+      origin: new google.maps.Point(0,0),
+      anchor: new google.maps.Point(0,0)
+    };
+
+  }
+  window.addEventListener("load", makeIcon)
   window.addEventListener("load", showMarkers)
   window.addEventListener("load", addMapEventListeners)
