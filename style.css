@@ -136,13 +136,15 @@ table {
   border-radius: 35px;
   border: 1px rgba(59, 13, 17, 1);
   background-color: rgba(255, 255, 255, 0.3);
-  padding: 15px;
+  /*padding: 15px;*/
+  margin-right: 180px;
   width: 100%;
   animation: tableTrans 1.0s linear;
 }
 
 td {
-  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 #map_holder {
@@ -158,4 +160,16 @@ td {
   color: rgba(112, 101, 99, 1);
   text-align: center;
   margin-bottom: 2px;
+}
+
+#gottaGo {
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 1px 1px rgba(112, 101, 99, 1);
+  margin-top: 75px;
+  height: 120px;
+}
+
+#displayTable {
+  margin-right: 180px;
 }
