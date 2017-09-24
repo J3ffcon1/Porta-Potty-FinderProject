@@ -79,10 +79,20 @@ nav {
   word-spacing: 30px;
   border-bottom: 2px solid rgb(0,0,0);
   padding-bottom: 5px;
-  margin-left: 500px;
-  margin-right: 500px;
+  margin-left: 35%;
+  margin-right: 35%;
+  min-width:165px;
   }
 
+/*#border-line {
+  border-bottom: 2px solid rgb(0,0,0);
+  width: 100%;
+  border: black 1px solid;
+  position: relative;
+  display: block;
+  margin-left: 50%;
+  margin-right: 50%;
+}*/
 
 #disclaimer {
   text-align: center;
