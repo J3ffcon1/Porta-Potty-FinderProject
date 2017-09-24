@@ -1,28 +1,27 @@
+//Declaring variables for usage//
 var pos, sortedPotties;
 
+//Intitial function placing origin marker on map//
 function initMap() {
   map = new google.maps.Map(document.getElementById('map_holder'), {
         center: {lat: 45.523 , lng: -122.681 },
         zoom: 16
   });
 
-
+//Allows for the map stylers to be made invisible for easier viewing//
   map.setOptions({
     styles:[
       {
         featureType: 'poi.business',
         stylers: [{visibility: 'off'}]
       },
-      // {
-      //   featureType: 'transit',
-      //   elementType: 'labels.icon',
-      //   stylers: [{visibility: 'off'}]
-      // }
     ]
   })
 
+//Generating window for map to display//
   infoWindow = new google.maps.InfoWindow;
 
+//Function grabs the current location of the user and displays it on the map//
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       pos = {
@@ -40,12 +39,9 @@ function initMap() {
       });
       generateList();
     }, function() {
-      // handleLocationError(true, infoWindow, map.getCenter());
+//Code breaking without function in place. Possible API code issue//
     });
   } else {
-    // Browser doesn't support Geolocation
-    // handleLocationError(false, infoWindow, map.getCenter());
+//Code breaking without function in place. Possible API code issue//
   }
 }
-// async defer
-// src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxM8Bh8A5SsoWYt1SL_LUpC3GMrCgzPzo&callback=initMap";
