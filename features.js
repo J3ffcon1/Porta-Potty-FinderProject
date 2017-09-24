@@ -64,11 +64,11 @@ function saveData() {
 }
 
 var pottySpots = [];
-pottySpots.push (new Features ('Riverfront Potty', 'Always Open', {lat: 45.52549, lng: -122.670283} , 'Yes', 'private', 'Yes', '2', 'It was nice. There were no bugs or feces left in the potty. I had a grand time.' ));
-pottySpots.push (new Features ('Super Stinky Potty', 'Always Open', {lat: 45.52441, lng: -122.677257} , 'No', 'public', 'No', '2', '' ));
-pottySpots.push (new Features ('Park Ave Potty', '9am to Dusk', {lat: 45.52448, lng: -122.67914} , 'Yes', 'public', 'No', '4', ''));
-pottySpots.push (new Features ('Freeway Potty', '11am to 7pm', {lat: 45.523540534, lng: -122.68671992} , 'No', 'private', 'Yes', '4', ''));
-pottySpots.push (new Features ('Sizzle Potty', 'Dusk to Dawn', {lat: 45.522292, lng: -122.682042} , 'Yes', 'public', 'No', '3', ''));
+pottySpots.push (new Features ('Riverfront Potty', 'Always Open', {lat: 45.52549, lng: -122.670283} , 'Yes', 'private', 'Yes', '2', 'It was nice. There were no bugs in the potty. I had a grand time.' ));
+pottySpots.push (new Features ('Super Stinky Potty', 'Always Open', {lat: 45.52441, lng: -122.677257} , 'No', 'public', 'No', '2', 'Name says it all. Nothing more to be said.' ));
+pottySpots.push (new Features ('Park Ave Potty', '9am to Dusk', {lat: 45.52448, lng: -122.67914} , 'Yes', 'public', 'No', '4', 'The location is top notch! I was able to make my stop in peace. Definitely recommend this to anyone!'));
+pottySpots.push (new Features ('Freeway Potty', '11am to 7pm', {lat: 45.523540534, lng: -122.68671992} , 'No', 'private', 'Yes', '4', 'Private stops are the BEST! This was the quietest location I have been to so far!'));
+pottySpots.push (new Features ('Sizzle Potty', 'Dusk to Dawn', {lat: 45.522292, lng: -122.682042} , 'Yes', 'public', 'No', '3', 'Being right next to a pizza restaurant makes this stop VERY convenient! If you gotta go after you eat its right there! How lucky!'));
 
 var portapotties = localStorage.getItem('pottySpots');
 if (portapotties) {
