@@ -64,7 +64,7 @@ function saveData() {
 }
 
 var pottySpots = [];
-pottySpots.push (new Features ('Riverfront Potty', 'Always Open', {lat: 45.52549, lng: -122.670283} , 'Yes', 'private', 'Yes', '2', '' ));
+pottySpots.push (new Features ('Riverfront Potty', 'Always Open', {lat: 45.52549, lng: -122.670283} , 'Yes', 'private', 'Yes', '2', 'It was nice. There were no bugs or feces left in the potty. I had a grand time.' ));
 pottySpots.push (new Features ('Super Stinky Potty', 'Always Open', {lat: 45.52441, lng: -122.677257} , 'No', 'public', 'No', '2', '' ));
 pottySpots.push (new Features ('Park Ave Potty', '9am to Dusk', {lat: 45.52448, lng: -122.67914} , 'Yes', 'public', 'No', '4', ''));
 pottySpots.push (new Features ('Freeway Potty', '11am to 7pm', {lat: 45.523540534, lng: -122.68671992} , 'No', 'private', 'Yes', '4', ''));
@@ -117,7 +117,7 @@ function sortPottyList() {
 function displayList() {
   var ulElement = document.createElement("ul");
   var spanTitle = document.createElement("span");
-  spanTitle.innerText = "Top Seats Near You";
+  spanTitle.innerText = "Top 5 Seats Near You";
   spanTitle.setAttribute("id", "spanTitle");
   ulElement.appendChild(spanTitle);
   document.getElementById("displayList").appendChild(ulElement);
@@ -163,6 +163,12 @@ function buildTable(clicked) {
   row3.appendChild(privacyElement);
   tableBody.appendChild(row3);
   document.getElementById("displayTable").appendChild(createTable);
+  var row4 = document.createElement("tr");
+  var commentElement = document.createElement("td");
+  commentElement.setAttribute("colspan", "2");
+  commentElement.innerText = "Comments: " + clicked.comment;
+  row4.appendChild(commentElement);
+  tableBody.appendChild(row4);
 }
 
 function displayTable(event) {
@@ -188,7 +194,7 @@ function displayTable(event) {
 
   function makeIcon() {
     image = {
-      url: "images/Household-Toilet-on-icon.png",
+      url: "images/Household-Toilet-Pan.ico",
       scaledSize: new google.maps.Size(50,50),
       origin: new google.maps.Point(0,0),
       anchor: new google.maps.Point(0,0)
