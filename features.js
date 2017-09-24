@@ -1,22 +1,25 @@
-var Features = function (title, hours, position, handWash, privacy, clean, rollRating, comment) {
-  this.title = title;
-  this.hours = hours;
-  this.position = position;
-  this.distance = 0;
-  this.type = "potty";
-  this.wash = handWash;
-  this.privacy = privacy;
-  this.clean = clean;
-  this.overall = rollRating;
-  this.comment = comment;
-}
-// adding variables to use with google maps.
+// global variables (Google Maps API)
 var map;
 var marker;
 var infowindow;
 var messagewindow;
 var image;
 
+// object constructor for all potty info
+var Features = function (title, hours, position, handWash, privacy, clean, rollRating, comment) {
+  this.title = title;
+  this.hours = hours;
+  this.position = position;
+  this.distance = 0; //calculated in calculateDistance() and added to array pottySpots
+  this.type = "potty"; //used in showMarkers()
+  this.wash = handWash;
+  this.privacy = privacy;
+  this.clean = clean;
+  this.overall = rollRating;
+  this.comment = comment;
+}
+
+//add event listener onClick functionality to: add marker, get coordinates and save to localStorage, get array pottySpots and save to localStorage, open review form
 function addMapEventListeners() {
   console.log("adding eventlistener to map");
 
@@ -37,19 +40,7 @@ function addMapEventListeners() {
 
   });
 
-
-  // function updateMarkerStatus(str) {
-  //   document.getElementById('marker').innerHTML = str;
-  // }
-  //
-  // function updateMarkerPosition(latLng) {
-  //   document.getElementById('position').innerHTML = [
-  //     latLng.lat(),
-  //     latLng.lng()
-  //   ].join(', ');
-  // }
-
-}
+  }
 
 function saveData() {
   var latlng = marker.getPosition();
@@ -73,7 +64,7 @@ pottySpots.push (new Features ('Sizzle Potty', 'Dusk to Dawn', {lat: 45.522292, 
 var portapotties = localStorage.getItem('pottySpots');
 if (portapotties) {
   pottySpots = JSON.parse(portapotties);
-  }
+}
 
 function showMarkers() {
   for (var i=0; i < pottySpots.length; i++) {
@@ -186,21 +177,21 @@ function displayTable(event) {
   }
   while (listClickedTitle !== clicked.title);
 }
-  function generateList() {
-    calculateDistance();
-    sortPottyList();
-    displayList();
-  }
+function generateList() {
+  calculateDistance();
+  sortPottyList();
+  displayList();
+}
 
-  function makeIcon() {
-    image = {
-      url: "images/Household-Toilet-Pan.ico",
-      scaledSize: new google.maps.Size(50,50),
-      origin: new google.maps.Point(0,0),
-      anchor: new google.maps.Point(0,0)
-    };
+function makeIcon() {
+  image = {
+    url: "images/Household-Toilet-Pan.ico",
+    scaledSize: new google.maps.Size(50,50),
+    origin: new google.maps.Point(0,0),
+    anchor: new google.maps.Point(0,0)
+  };
 
-  }
-  window.addEventListener("load", makeIcon)
-  window.addEventListener("load", showMarkers)
-  window.addEventListener("load", addMapEventListeners)
+}
+window.addEventListener("load", makeIcon)
+window.addEventListener("load", showMarkers)
+window.addEventListener("load", addMapEventListeners)
