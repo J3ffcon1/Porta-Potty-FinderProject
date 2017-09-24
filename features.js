@@ -117,12 +117,12 @@ function sortPottyList() {
 function displayList() {
   var ulElement = document.createElement("ul");
   var spanTitle = document.createElement("span");
-  spanTitle.innerText = "Top 5 Seats Near You";
+  spanTitle.innerText = "Top 5 Stops Near You";
   spanTitle.setAttribute("id", "spanTitle");
   ulElement.appendChild(spanTitle);
   document.getElementById("displayList").appendChild(ulElement);
   var sortedList = pottySpots.sort(sortDistance);
-  for (var i=0; i < sortedList.length; i++) {
+  for (var i=0; i < 5; i++) {
     var liElement = document.createElement("li");
     var currentPotty = sortedList[i];
     liElement.innerText = currentPotty.title + " | Roll Rating: " + currentPotty.overall;

@@ -31,7 +31,7 @@ function initMap() {
       };
 
       infoWindow.setPosition(pos);
-      infoWindow.setContent('Find a seat near you');
+      infoWindow.setContent('Find a stop near you');
       infoWindow.open(map);
       map.setCenter(pos);
       var marker = new google.maps.Marker({
