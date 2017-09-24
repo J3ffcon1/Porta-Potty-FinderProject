@@ -40,7 +40,7 @@ function addMapEventListeners() {
 
   });
 
-  }
+}
 
 function saveData() {
   var latlng = marker.getPosition();
