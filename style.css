@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 @import "transitions.css";
+
 body {
   background-color: rgba(157, 199, 200, 1);
   font-family: "Poppins";
@@ -17,6 +18,7 @@ body {
 h3 {
   text-align: center;
 }
+
 .ratingScale:not(old){
   display        : inline-block;
   width          : 7.5em;
@@ -62,7 +64,6 @@ h1 {
 
 #position1, #position2 {
   color: rgb(211,211,211);
-
 }
 
 #mission {
@@ -73,13 +74,13 @@ a {
   text-decoration: none;
   color: black;
 }
+
 #mapinfo {
   text-align: center;
 }
 
 a:hover {
   color: rgba(112, 101, 99, 1);
-
 }
 
 nav {
@@ -90,8 +91,7 @@ nav {
   padding-bottom: 5px;
   margin-left: 35%;
   margin-right: 35%;
-  }
-
+}
 
 #disclaimer {
   text-align: center;
