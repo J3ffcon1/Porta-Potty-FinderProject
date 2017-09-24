@@ -14,6 +14,9 @@ body {
   width: 20%;
 }
 
+h3 {
+  text-align: center;
+}
 .ratingScale:not(old){
   display        : inline-block;
   width          : 7.5em;
@@ -54,6 +57,7 @@ body {
 
 h1 {
   text-align: center;
+  text-shadow: 1px 1px rgba(112, 101, 99, 1);
 }
 
 #position1, #position2 {
