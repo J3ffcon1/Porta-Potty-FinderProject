@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Reviews</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <header>
-      <img id="tardis" src="images/pp_icon.jpg" alt="Porta Potty">
-      <h1>Stop and Drop</h1>
-      <h3><i>When nature calls, will you answer?</i></h3>
-      <nav>
-        <div id = "index-nav">
-          <a href = "index.html">Home</a>
-          <a href = "about.html">About</a>
-        </div>
-      </nav>
-    </header>
-    <form id = "reviewform" name ="form">
-      <fieldset>
-        <legend>Please enter your spot information here:</legend>
-          <p>Name Your Spot:<br>
-          <input id ="title" type="text" name="reviewtitle" maxlength="50" required><br></p>
-          <p>Latitude:<br>
-          <input id = "position1" type ="text" name="lat" maxlength = "50" readonly><br></p>
-          <p>Longitude:<br>
-          <input id = "position2" type ="text" name="long" maxlength = "50" readonly><br></p>
-
-          <p>Hours:<br>
-          <input id = "hours" type="text" name="hours" maxlength="50" required></p>
-          <p>Handwashing Available?</p>
-          <p>
-          <input id = "wash" type="radio" name="hand" value="yes">Yes<br>
-          <input type="radio" name="hand" value="no">No</p>
-      </fieldset>
-      <fieldset>
-        <legend>Please share your experience here:</legend>
+<head>
+  <title>Reviews</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+    <img id="tardis" src="images/pp_icon.jpg" alt="Porta Potty">
+    <h1>Stop and Drop</h1>
+    <h3><i>When nature calls, will you answer?</i></h3>
+    <nav>
+      <div id = "index-nav">
+        <a href = "index.html">Home</a>
+        <a href = "about.html">About</a>
+      </div>
+    </nav>
+  </header>
+  <form id = "reviewform" name ="form">
+    <fieldset>
+      <legend>Please enter your spot information here:</legend>
+      <p>Name Your Spot:<br>
+        <input id ="title" type="text" name="reviewtitle" maxlength="50" required><br></p>
+      <p>Latitude:<br>
+        <input id = "position1" type ="text" name="lat" maxlength = "50" readonly><br></p>
+      <p>Longitude:<br>
+        <input id = "position2" type ="text" name="long" maxlength = "50" readonly><br></p>
+      <p>Hours:<br>
+        <input id = "hours" type="text" name="hours" maxlength="50" required></p>
+      <p>Handwashing Available?</p>
+        <p>
+        <input id = "wash" type="radio" name="hand" value="yes">Yes<br>
+        <input type="radio" name="hand" value="no">No</p>
+    </fieldset>
+    <fieldset>
+      <legend>Please share your experience here:</legend>
         <p>Overall Experience:<br></p>
           <span class="ratingScale">
             <input id="rating5" type="radio" name="rollRating" value="5">
@@ -48,27 +47,23 @@
             <input id="rating1" type="radio" name="rollRating" value="1">
             <label for="rating1">1</label>
           </span>
-          <p>Privacy:<br>
-            <input type="radio" name="privacy" value="private">Private<br>
-            <input type="radio" name="privacy" value="public">Public</p>
-          <p>Is it Clean?<br>
-            <input type="radio" name="clean" value="yes">Yes<br>
-            <input type="radio" name="clean" value="no">No</p>
-          <p>Additional Comments:<br>
-          <!-- <input id = "commentbox" type="text" name="comments" required></p> -->
-          <textarea rows="5" name= "comment" cols="30" maxlength="200"></textarea><br>
-
-      <input type="submit" value="Submit">
+        <p>Privacy:<br>
+          <input type="radio" name="privacy" value="private">Private<br>
+          <input type="radio" name="privacy" value="public">Public</p>
+        <p>Is it Clean?<br>
+          <input type="radio" name="clean" value="yes">Yes<br>
+          <input type="radio" name="clean" value="no">No</p>
+        <p>Additional Comments:<br>
+            <textarea rows="5" name= "comment" cols="30" maxlength="200"></textarea><br>
+            <input type="submit" value="Submit">
     </fieldset>
-    </form>
+  </form>
     <script type="text/javascript" src="localStorage.js"></script>
-
-
   </body>
   <footer>
-    <div id="disclaimer">
-      <h3>Disclaimer</h3>
-      <p>Due to the transient nature of porta-potty locations and use restrictions, our legal team has advised us to advise you that use of our web application is at your own risk and we are not responsible for anything that happens.  USE AT OWN RISK!</p>
-    </div>
+  <div id="disclaimer">
+    <h3>Disclaimer</h3>
+    <p>Due to the transient nature of porta-potty locations and use restrictions, our legal team has advised us to advise you that use of our web application is at your own risk and we are not responsible for anything that happens.  USE AT OWN RISK!</p>
+  </div>
   </footer>
 </html>
